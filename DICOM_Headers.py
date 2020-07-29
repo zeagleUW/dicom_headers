@@ -8,6 +8,7 @@ dicom_file_location = "./dicom"
 #Name of output file
 output_file = './dicom_data2.csv'
 
+#List of headers you want to extract to CSV
 headers = {"PatientName","PatientID", "KVP"}
 
 def create_CSVHeaders(headers, csvwriter):
@@ -15,7 +16,6 @@ def create_CSVHeaders(headers, csvwriter):
 	for header in headers:
 		dicom.append(header)
 	csvwriter.writerow(dicom)
-
 
 def main():
 	dicom_data = open(output_file, 'w', newline='')
